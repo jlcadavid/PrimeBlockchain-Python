@@ -47,20 +47,21 @@ class MinimalChain():
             if self.blocks[i].index != i:
                 flag = False
                 if verbose:
-                    print(f'Wrong block index at block {i}.')
+                    print('Wrong block index at block ' + i + '.')
             if self.blocks[i-1].hash != self.blocks[i].previous_hash:
                 flag = False
                 if verbose:
-                    print(f'Wrong previous hash at block {i}.')
+                    print('Wrong previous hash at block ' + i + '.')
             if self.blocks[i].hash != self.blocks[i].hashing():
                 flag = False
                 if verbose:
-                    print(f'Wrong hash at block {i}.')
+                    print('Wrong hash at block ' + i + '.')
             if self.blocks[i-1].timestamp >= self.blocks[i].timestamp:
                 flag = False
                 if verbose:
-                    print(f'Backdating at block {i}.')
+                    print('Backdating at block ' + i + '.')
         return flag
+        
     
     def fork(self, head='latest'):
         if head in ['latest', 'whole', 'all']:

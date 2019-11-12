@@ -20,7 +20,7 @@ c = 0
 
 if rank == 0:
 
-    print('Digite W en cientos de miles')
+    print('Digite W en cientos de miles:')
     W = int(input())
     maxK = W * 100000
     start_time = time.time()
@@ -46,8 +46,8 @@ if rank == 0:
 
     end_time = time.time()
     #print('done!')
-    print('tenemos > ' + str(len(primes)) + ' primos')
-    print('time > ' + str(end_time-start_time))
+    print('Tenemos > ' + str(len(primes)) + ' primos')
+    print('Tiempo > ' + str(end_time-start_time))
 else:
     data = np.array([0, 0])
     comm.Recv([data, MPI.INT], source=0)
