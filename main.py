@@ -46,8 +46,9 @@ if rank == 0:
 
     end_time = time.time()
     #print('done!')
-    print('Tenemos > ' + str(len(primes)) + ' primos')
-    print('Tiempo > ' + str(end_time-start_time))
+    print('Tenemos > ' + str(len(primes)) + ' primos.')
+    print('Tiempo > ' + str(end_time-start_time) + '.')
+    
 else:
     data = np.array([0, 0])
     comm.Recv([data, MPI.INT], source=0)
